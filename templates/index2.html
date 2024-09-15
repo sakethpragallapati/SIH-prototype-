@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Topic Selection</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #d4af37;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        h1 {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            color: #c4b08a;
+        }
+        .card-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+        .card {
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            background-color: #2b2b2b;
+            margin: 20px;
+            width: 280px;
+            height: 450px;
+            text-align: center;
+            border: 1px solid #a89030;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .card-img-top {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .card-body {
+            padding: 15px;
+            flex-grow: 1;
+        }
+        .card-title {
+            font-family: 'Georgia', serif;
+            font-size: 1.5em;
+            color: #c4b08a;
+            margin-bottom: 15px;
+        }
+        .card-text {
+            font-family: 'Arial', sans-serif;
+            color: #a89030;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .btn {
+            background-color: #3e3e3e;
+            color: #e0e0e0;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .btn:hover {
+            background-color: #5c5c5c;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div><h1>Select a topic from the following</h1></div>
+        <div class="card-container">
+            <div class="card">
+                <img src="https://th.bing.com/th/id/OIP.LuBU6cykCMmZild02vg7OgAAAA?rs=1&pid=ImgDetMain" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Legislative</h5>
+                    <p class="card-text">The Legislative branch is responsible for making laws. It consists of elected representatives who debate and vote on new laws and amendments.</p>
+                    <form action="{{ url_for('levels') }}" method="get">
+                        <button type="submit" class="btn btn-primary">Select</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/564x/b2/2a/29/b22a292c3ce7540bd0bfb7416ff2020e.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Executive</h5>
+                    <p class="card-text">The Executive branch enforces laws and is responsible for implementing government policies and administering public services.</p>
+                    <form action="{{ url_for('levels') }}" method="get">
+                        <button type="submit" class="btn btn-primary">Select</button>
+                    </form>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://i.pinimg.com/736x/1f/da/b3/1fdab368dd0d768b817879267b756328.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Judiciary</h5>
+                    <p class="card-text">The Judiciary interprets laws, resolves disputes, and ensures justice is upheld through the court system.</p>
+                    <form action="{{ url_for('levels') }}" method="get">
+                        <button type="submit" class="btn btn-primary">Select</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

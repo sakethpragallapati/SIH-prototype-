@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Levels</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #d4af37;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .h1class {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .level-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 80%;
+            position: relative;
+        }
+        .level {
+            background-color: #3e3e3e;
+            color: #e0e0e0;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border: 2px solid #a89030;
+            position: relative;
+        }
+        .level:hover {
+            background-color: #5c5c5c;
+        }
+        .line {
+            position: absolute;
+            height: 4px;
+            background-color: #a89030;
+            z-index: -1;
+        }
+        .line1 {
+            width: calc(100% - 160px); /* Adjust as needed */
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+        }
+        .line2 {
+            width: 80px;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%) rotate(90deg);
+        }
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid #a89030; /* Arrow color */
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 50%;
+            left: calc(100% + 50px); /* Adjust spacing from the circle */
+            transform: translateY(-50%); /* Center vertically */
+        }
+        .form-container {
+            display: inline-block;
+            position: relative;
+        }
+        .submit-btn {
+            background: none;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="h1class">
+        <h1>Select a level</h1>
+    </div>
+    <div class="level-container">
+        <!-- Form for Level 1 -->
+        <div class="form-container">
+            <form action="{{ url_for('executive_level1') }}" method="get">
+                <button type="submit" class="submit-btn">
+                    <div class="level">1</div>
+                </button>
+            </form>
+        </div>
+
+        <!-- Line between Level 1 and Level 2 -->
+        <div class="line line1"></div>
+
+        <!-- Form for Level 2 -->
+        <div class="form-container">
+            <form action="{{ url_for('legislative_level1') }}" method="get">
+                <button type="submit" class="submit-btn">
+                    <div class="level">2</div>
+                </button>
+            </form>
+        </div>
+
+        <!-- Line between Level 2 and Level 3 -->
+        <div class="line line2"></div>
+
+        <!-- Form for Level 3 -->
+        <div class="form-container">
+            <form action="{{ url_for('judiciary_level1') }}" method="get">
+                <button type="submit" class="submit-btn">
+                    <div class="level">3</div>
+                </button>
+            </form>
+            <!-- Arrow after Level 3 -->
+            <div class="arrow"></div>
+        </div>
+    </div>
+</body>
+</html>
